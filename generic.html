@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-
 <html>
 
 <head>
@@ -10,32 +9,88 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
+	<style>
+		/* Add some basic styling for the tabs and hidden projects */
+		.filter-buttons {
+			text-align: center;
+			/* Original margin-bottom: 2em; */
+			margin-bottom: 2em;
+			/* Keep this as it affects space below buttons */
+
+			/* --- NEW: Reduce the margin-top here --- */
+			margin-top: 0em;
+			/* Reduced from default/larger to closer to the text */
+			/* You can try 0.5em or even 0 if you want them very close */
+		}
+
+		/* --- NEW: Target the featured article if it has excessive bottom margin --- */
+		/* Assuming 'post featured' is the article holding your intro text on the projects page */
+		article.post.featured {
+			margin-bottom: 0em;
+			/* Reduce default bottom margin. Adjust as needed. */
+			/* If this is the 'About Me' article, this change will affect that too.
+               If you want this only for the "Projects" section's intro, you'd need
+               to give that specific article a unique class/ID. */
+			padding-bottom: 0em;
+			/* Sometimes padding can contribute, remove if present */
+		}
+
+		/* If you still had <h1>My Projects</h1> or a similar heading,
+           you might need to adjust its margin as well: */
+		/* h1 { margin-bottom: 0.5em; } */
+		/* or similar adjustment */
+
+
+		.filter-button {
+			background-color: #f0f0f0;
+			border: 1px solid #ddd;
+			padding: 0px 40px;
+			margin: 10px;
+			cursor: pointer;
+			font-weight: bold;
+			border-radius: 5px;
+			transition: background-color 0.3s ease, color 0.3s ease;
+		}
+
+		.filter-button:hover,
+		.filter-button.active {
+			background-color: #007bff;
+			/* A nice blue for active/hover */
+			color: #fff;
+		}
+
+		/* Initially hide all projects except 'all' category (handled by JS later) */
+		.posts article {
+			display: none;
+			/* Hide all project articles by default */
+		}
+
+		.posts article.show {
+			display: block;
+			/* Show articles with 'show' class */
+		}
+	</style>
 </head>
 
 <body class="is-preload">
 
-	<!-- Wrapper -->
 	<div id="wrapper" class="fade-in">
 
-		<!-- Intro -->
 		<div id="intro">
-			<h1>Hi, I am Siddharth</h1>
-
-			<p>As a data analyst, I believe that portfolio projects are invaluable in demonstrating my ability to
-				effectively apply data analysis techniques to real-world problems, providing you with concrete evidence
-				of my skills and problem-solving capabilities.</p>
-
-
+			<h1>Hi, I am Siddharth Kamble</h1>
+			<p>Microsoft Certified Power BI Developer and Google Certified Data Analyst with 6+ years of
+				experience, I transform complex data into clear, actionable insights.</p>
+			<p>Welcome to my portfolio!</p>
 			<ul class="actions">
 				<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 			</ul>
 		</div>
 
-
-		<!-- Nav -->
 		<nav id="nav">
 			<ul class="links">
-				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="index.html">About Me</a></li>
+				<li class="active"><a href="generic.html">My Projects</a></li>
+				<li><a href="elements.html">My Certifications</a></li>
 			</ul>
 			<ul class="icons">
 				<li><a href="https://www.linkedin.com/in/siddharth-prajapati-0859501b7/"
@@ -45,145 +100,210 @@
 			</ul>
 		</nav>
 
-		<!-- Main -->
 		<div id="main">
 
-			<!-- Featured Post -->
 			<article class="post featured">
-
-				<h1>More Projects</h1>
+				<header class="major">
+					<h2>Unlock the Power of Data with me</h2>
+					<p>At my core, I'm a business problem-solver using data & I am specialize in
+						building impactful solutions that empower leaders to make an data-driven decisions. My expertise
+						spans the Microsoft data stack, including Power BI, DAX, Power Query, Power BI Services,
+						Microsoft Fabric and Azure Cloud Services.
+						I further leverage SQL for robust data querying and Excel for comprehensive data
+						handling. For advanced capabilities, my proficiency extends to Python, encompassing Machine
+						Learning, AI, and Prompt Engineering, alongside Power Automate for process automation.
+						Take a look at my work and let's
+						connect!</p>
+				</header>
 			</article>
 
-			<!-- Posts -->
+			<div class="filter-buttons">
+				<button class="filter-button active" data-filter="all">All</button>
+				<button class="filter-button" data-filter="powerbi">Power BI</button>
+				<button class="filter-button" data-filter="excel">Excel</button>
+				<button class="filter-button" data-filter="sql">SQL</button>
+				<button class="filter-button" data-filter="python">Python</button>
+				<button class="filter-button" data-filter="r">R</button>
+			</div>
+
+
 			<section class="posts">
-				<article>
+				<article class="show" data-category="powerbi">
 					<header>
-						<h2><a href="https://github.com/Sid-TheAnalyst/Analysis-Of-Hotel-Booking-Data">
-								Analysis Of Hotel Booking data</a></h2>
+						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiMjBkNzdhNTgtYmJjNy00ZDI2LWIyODAtMjk2YWUyMDY0NjY5IiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
+								target="_blank">
+								Critical Metrics Dashboard</a></h2>
 					</header>
-					<a class="image fit"><img src="images/hotelbooking.png" alt="" /></a>
-					<p>Created an database in SQL server using CSV files & performed EDA using SQL queries to explore
-						the dataset. After that connected the database with Power BI using DirectQuery to analyze &
-						visualize the data.</p>
+					<a class="image fit"><img src="images/historicalsales.png" alt="" /></a>
+					<p>Developed a Power BI dashboard
+						for an Australia-based retail
+						supply chain client to analyze
+						store complaints data. Imported the data into the
+						dashboard by connecting it to
+						the Azure SQL database.</p>
 				</article>
 
-				<article>
+				<article class="show" data-category="powerbi">
 					<header>
-						<h2><a href="https://github.com/Sid-TheAnalyst/Maven-Market-Revenue-Analysis">
-								Maven Market Revenue Analysis</a></h2>
+						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiMjRmNDYzMmEtZDBiMi00ZDU4LThmMzctODIzZmY5ZDRmN2E4IiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
+								target="_blank">
+								Critical Metrics Mobile Application </a></h2>
 					</header>
-					<a class="image fit"><img src="images/mavenmarket.jpg" alt="" /></a>
-					<p>Revenue analysis of "Maven Market - a multinational grocery chain" using Power BI. Learn many DAX
-						functions like SUMX, COUNTX, CALCULATE, SWITCH, ALL, DATESYTD, DATESINPERIOD etc.Understand the
-						concept of one-to-many relationship between the tables & two way filters.
+					<a class="image fit"><img src="images/WOW_CMD_MV.png" alt="" /></a>
+					<p>Developed a Power BI dashboard
+						for an Australia-based retail
+						supply chain client to analyze
+						store complaints data. Imported the data into the
+						dashboard by connecting it to
+						the Azure SQL database.</p>
+				</article>
+
+
+				<article data-category="excel">
+					<header>
+						<h2><a href="https://github.com/Sid-TheAnalyst/Analysis-Of-IPL-Dataset" target="_blank">
+								Analysis Of IPL Dataset Using Excel</a></h2>
+					</header>
+					<a class="image fit"><img src="images/iplanalysis.png" alt="" /></a>
+					<p>Dashboard was built to show the season wise summary of the IPL tournament using Microsoft Excel.
 					</p>
 				</article>
 
-				<article>
+				<article data-category="sql">
 					<header>
-						<h2><a href="https://github.com/Sid-TheAnalyst/eCommerce_Store_Sales_Analysis">
-								e-Commerce Store Sales Analysis</a></h2>
+						<h2><a href="https://github.com/Sid-TheAnalyst/Analysis-of-COVID19-Data-Using-SQL/blob/main/COVID19_DATA_Analysis/COVID19%20Analysis%20Using%20SQL.pdf"
+								target="_blank">
+								Analysis Of COVID19 data using SQL</a></h2>
 					</header>
-					<a class="image fit"><img src="images/vrinda.png" alt="" /></a>
-					<p>In this project, I have analyze the historical sales data of eCommarce store name "Vrinda" using
-						Microsoft Excel to find out the customers
-						buying trends & provided the recommendations to grow there sales.</p>
+					<a class="image fit"><img src="images/covid19.jpg" alt="" /></a>
+					<p>The dataset used for this project have the COVID-19 cases recoreded from 24th Feb 2020 to 30th
+						Apr 2021.</p>
 				</article>
 
-				<article>
+				<article data-category="python">
 					<header>
-						<h2><a
-								href="https://github.com/Sid-TheAnalyst/Exploratory-Data-Analysis-Of-911-Calls-Data/blob/main/Exploratory%20Data%20Analysis%20Of%20911%20Calls%20Data%20Using%20Python.ipynb">
-								EDA of 911 calls data using Python </a></h2>
+						<h2><a href="https://github.com/Sid-TheAnalyst/WebScraping-YouTube-Data-For-Exploratory-Data-Analysis/blob/main/WebSraping%20YouTube's%20Data%20For%20Analysis/WebScraping%20YouTube's%20Data%20For%20Exploratory%20Data%20Analysis.pdf"
+								target="_blank">
+								Websraping YouTube Data Using Python </a></h2>
 					</header>
-					<a class="image fit"><img src="images/911.jpg" alt="" /></a>
-					<p>For this project I have analyze the 911 call dataset from Kaggle. Demonstrates extraction of
-						useful features from different variables.</p>
-				</article>
-
-				<article>
-					<header>
-						<h2><a href="https://github.com/Sid-TheAnalyst/Analysis-Of-Palmer-Penguins-Dataset-Using-R">
-								Analysis Of Palmer Penguins Dataset Using R </a></h2>
-					</header>
-					<a class="image fit"><img src="images/PalmerPenguins.png" alt="" /></a>
-					<p> I have created this fun project as an assignment for Google data analytics certification course.
-						I
-						have used R programming language for exploration and visualization of Palmer Penguins data.
+					<a class="image fit"><img src="images/youtube.jpg" alt="" /></a>
+					<p>I have build an Python Project to Scrape YouTube data using YouTube Data API.
 					</p>
 				</article>
 
-				<article>
+				<article data-category="r">
 					<header>
-						<h2><a
-								href="https://github.com/Sid-TheAnalyst/Analysis-Of-StarWars-Characters-Dataset-Using-R-">
-								EDA Of StarWars Characters Dataset Using R</a></h2>
+						<h2><a href="https://github.com/Sid-TheAnalyst/Cyclistic-Bike-Share-Analysis-Using-R/blob/main/Cyclistic%20Bike%20Share%20Analysis/Google%20Capstone%20Project%20PDF%20File.pdf"
+								target="_blank">
+								Cyclistic Bike Share Analysis Using R </a></h2>
 					</header>
-					<a class="image fit"><img src="images/StarWars.jpg" alt="" /></a>
-					<p>This is an fun project I have created to practice my data analysis skills using R programming
+					<a class="image fit"><img src="images/bikeshare.jpg" alt="" /></a>
+					<p>This is an Capstone Project build using R programming For Google Data Analytics Certification.
 					</p>
 				</article>
 
-				<article>
+				<article data-category="python">
 					<header>
-						<h2><a
-								href="https://github.com/Sid-TheAnalyst/Sentiment-analysis-with-R/blob/main/Customer%20Sentiment%20Analysis/Customer-Sentiment-Analysis-Project.pdf">
-								Sentiment analysis with R Progamming</a></h2>
+						<h2><a href="https://github.com/Sid-TheAnalyst/CODESOFT-Intership-Projects/blob/main/Project2_Building_Movie_Rating_Prediction_Model.ipynb"
+								target="_blank">
+								Movie Rating Prediction With Python</a></h2>
 					</header>
-					<a class="image fit"><img src="images/sentiment.png" alt="" /></a>
-					<p>Sentiment Analysis is a process of extracting opinions that have different polarities. By
-						polarities, we mean positive, negative or neutral. It is also known as opinion mining and
-						polarity detection.
-					</p>
-				</article>
-
-				<article>
-					<header>
-						<h2><a
-								href="https://github.com/Sid-TheAnalyst/CODESOFT-Intership-Projects/blob/main/Project1_Titanic_Passengers_Survival_Prediction.ipynb">
-								Titanic Passengers Survival Prediction</a></h2>
-					</header>
-					<a class="image fit"><img src="images/Titanic.png" alt="" /></a>
-					<p> In this project, I have analyse the famous Titanic dataset from Kaggle. I have performed
-						exploratory analysis on the given dataset. After that I have build the supervised machine
-						larning model using Logistic Regression to predict the survival of passangers.
+					<a class="image fit"><img src="images/movieprediction.avif" alt="" /></a>
+					<p>Every dataset has a story and this set is pulled from IMDb.com of all the Indian movies on the
+						platform. I have build the predictive machine learning model using Stochastic Gradient Descent
+						(SGD) Regressor which is going to predicts the rating of a movie based on the given parameters.
 					</p>
 				</article>
 			</section>
 
-			<!-- Footer -->
 			<footer>
 				<div class="pagination">
-					<a href="index.html" class="previous">Home</a>
-					<!--<a href="index.html" class="page">1</a>
-					<a href="generic.html" class="page active">2</a>
-					<a href="#" class="page">3</a>
-					<span class="extra">&hellip;</span>
-					<a href="#" class="page">8</a>
-					<a href="#" class="page">9</a>
-					<a href="#" class="page">10</a>
-					<a href="generic.html" class="next">Next</a>-->
+					<a href="generic.html" class="next">More Projects</a>
 
 				</div>
-
-
-				<!-- Copyright -->
-				<div id="copyright">
-					<ul>
-						<li>&copy; Sid_The-Analyst 2023</li>
-					</ul>
-				</div>
-
+			</footer>
+			<h1>CONTACT DETAILS</h1>
 		</div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+		<footer id="footer">
+			<section class="split contact">
+				<section class="alt">
+					<h3>Address</h3>
+					<p>NaviMumbai, Maharashtra, India - 400701</p>
+				</section>
+				<section>
+					<h3>Phone</h3>
+					<p><a href="#">(+91) 9833223171</a></p>
+				</section>
+				<section>
+					<h3>Email</h3>
+					<p><a href="#">siddharth24005@gmail.com</a></p>
+				</section>
+				<section>
+					<h3>Social</h3>
+					<ul class="icons alt">
+						<li><a href="https://www.linkedin.com/in/siddharth-alka-kamble-0859501b7"
+								class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a>
+						</li>
+						<li><a href="https://github.com/Sid-TheAnalyst" class="icon brands alt fa-github"><span
+									class="label">GitHub</span></a></li>
+					</ul>
+				</section>
+			</section>
+		</footer>
+
+		<div id="copyright">
+			<ul>
+				<li>&copy; Sid_The-Analyst 2025</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const filterButtons = document.querySelectorAll('.filter-button');
+			const projectArticles = document.querySelectorAll('.posts article');
+
+			function filterProjects(category) {
+				projectArticles.forEach(article => {
+					const projectCategory = article.getAttribute('data-category');
+					if (category === 'all' || projectCategory === category) {
+						article.classList.add('show');
+					} else {
+						article.classList.remove('show');
+					}
+				});
+			}
+
+			filterButtons.forEach(button => {
+				button.addEventListener('click', function () {
+					// Remove 'active' class from all buttons
+					filterButtons.forEach(btn => btn.classList.remove('active'));
+
+					// Add 'active' class to the clicked button
+					this.classList.add('active');
+
+					// Get the filter category from data-filter attribute
+					const filterCategory = this.getAttribute('data-filter');
+
+					// Filter projects
+					filterProjects(filterCategory);
+				});
+			});
+
+			// Initial filter to show all projects when the page loads
+			filterProjects('all');
+		});
+	</script>
 
 </body>
 
