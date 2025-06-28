@@ -13,42 +13,17 @@
 		/* Add some basic styling for the tabs and hidden projects */
 		.filter-buttons {
 			text-align: center;
-			/* Original margin-bottom: 2em; */
 			margin-bottom: 2em;
-			/* Keep this as it affects space below buttons */
-
-			/* --- NEW: Reduce the margin-top here --- */
-			margin-top: 0em;
-			/* Reduced from default/larger to closer to the text */
-			/* You can try 0.5em or even 0 if you want them very close */
 		}
-
-		/* --- NEW: Target the featured article if it has excessive bottom margin --- */
-		/* Assuming 'post featured' is the article holding your intro text on the projects page */
-		article.post.featured {
-			margin-bottom: 0em;
-			/* Reduce default bottom margin. Adjust as needed. */
-			/* If this is the 'About Me' article, this change will affect that too.
-               If you want this only for the "Projects" section's intro, you'd need
-               to give that specific article a unique class/ID. */
-			padding-bottom: 0em;
-			/* Sometimes padding can contribute, remove if present */
-		}
-
-		/* If you still had <h1>My Projects</h1> or a similar heading,
-           you might need to adjust its margin as well: */
-		/* h1 { margin-bottom: 0.5em; } */
-		/* or similar adjustment */
-
 
 		.filter-button {
 			background-color: #f0f0f0;
 			border: 1px solid #ddd;
-			padding: 0px 40px;
+			padding: 0px 50px;
 			margin: 10px;
 			cursor: pointer;
 			font-weight: bold;
-			border-radius: 5px;
+			border-radius: 8px;
 			transition: background-color 0.3s ease, color 0.3s ease;
 		}
 
@@ -78,19 +53,23 @@
 
 		<div id="intro">
 			<h1>Hi, I am Siddharth Kamble</h1>
+
 			<p>Microsoft Certified Power BI Developer and Google Certified Data Analyst with 6+ years of
 				experience, I transform complex data into clear, actionable insights.</p>
-			<p>Welcome to my portfolio!</p>
+			<p>Welcome to my portfolio website!</p>
+
 			<ul class="actions">
 				<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 			</ul>
 		</div>
+
 
 		<nav id="nav">
 			<ul class="links">
 				<li><a href="index.html">About Me</a></li>
 				<li class="active"><a href="generic.html">My Projects</a></li>
 				<li><a href="elements.html">My Certifications</a></li>
+
 			</ul>
 			<ul class="icons">
 				<li><a href="https://www.linkedin.com/in/siddharth-prajapati-0859501b7/"
@@ -101,22 +80,6 @@
 		</nav>
 
 		<div id="main">
-
-			<article class="post featured">
-				<header class="major">
-					<h2>Unlock the Power of Data with me</h2>
-					<p>At my core, I'm a business problem-solver using data & I am specialize in
-						building impactful solutions that empower leaders to make an data-driven decisions. My expertise
-						spans the Microsoft data stack, including Power BI, DAX, Power Query, Power BI Services,
-						Microsoft Fabric and Azure Cloud Services.
-						I further leverage SQL for robust data querying and Excel for comprehensive data
-						handling. For advanced capabilities, my proficiency extends to Python, encompassing Machine
-						Learning, AI, and Prompt Engineering, alongside Power Automate for process automation.
-						Take a look at my work and let's
-						connect!</p>
-				</header>
-			</article>
-
 			<div class="filter-buttons">
 				<button class="filter-button active" data-filter="all">All</button>
 				<button class="filter-button" data-filter="powerbi">Power BI</button>
@@ -130,38 +93,111 @@
 			<section class="posts">
 				<article class="show" data-category="powerbi">
 					<header>
-						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiMjBkNzdhNTgtYmJjNy00ZDI2LWIyODAtMjk2YWUyMDY0NjY5IiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
+						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiYWViYWZjNDktZGJmNy00ZmIzLTk0NDgtNDVlN2UzMjFlMmE4IiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
 								target="_blank">
-								Critical Metrics Dashboard</a></h2>
+								Agent Performance Analysis Dashboard</a></h2>
 					</header>
-					<a class="image fit"><img src="images/historicalsales.png" alt="" /></a>
-					<p>Developed a Power BI dashboard
-						for an Australia-based retail
-						supply chain client to analyze
-						store complaints data. Imported the data into the
-						dashboard by connecting it to
-						the Azure SQL database.</p>
+					<a class="image fit"><img src="images/BOT2B_APR.png" alt="" /></a>
+					<p> Developed an Agent Performance Report for the support center of a Netherlands based client.
+						Enabled leadership to easily identify top performers and bottom defaulters.Used RLS technique to
+						provide an individual agents to only access their own performance.</p>
 				</article>
 
 				<article class="show" data-category="powerbi">
 					<header>
-						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiMjRmNDYzMmEtZDBiMi00ZDU4LThmMzctODIzZmY5ZDRmN2E4IiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
+						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiM2M2M2Q0ZWYtZDJlZi00ZmY4LTljOTctYmEwYTEzMGViYTQ1IiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
 								target="_blank">
-								Critical Metrics Mobile Application </a></h2>
+								Critical Metrics Dashboard</a></h2>
 					</header>
-					<a class="image fit"><img src="images/WOW_CMD_MV.png" alt="" /></a>
-					<p>Developed a Power BI dashboard
-						for an Australia-based retail
-						supply chain client to analyze
-						store complaints data. Imported the data into the
-						dashboard by connecting it to
-						the Azure SQL database.</p>
+					<a class="image fit"><img src="images/WOW_DPR.png" alt="" /></a>
+					<p> Developed a Power BI Dashboard to analyze the daily performance of the Australia-based client.
+						Integrated HTML & SVG visuals into Power BI dashboards, enriching data
+						presentation with dynamic, interactive elements for an improved user
+						experience.
+					</p>
 				</article>
 
+				<article class="show" data-category="powerbi">
+					<header>
+						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiYjY1OWVmMjEtZWIzOC00ZDAwLWI3ZjYtMWZiOWVhZDQxNjkyIiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
+								target="_blank">
+								Real-Time TV View Dashboard</a></h2>
+					</header>
+					<a class="image fit"><img src="images/Real_Time_TV_View.png" alt="" /></a>
+					<p> Developed a real-time TV View dashboard for a Qatar-based telecom client. Used Direct Query mode
+						for live database connectivity.Integrated Power Automate to refresh the dataset every 60
+						seconds.
+					</p>
+				</article>
+
+				<article class="show" data-category="powerbi">
+					<header>
+						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiZTYwZGEyZGQtZDRmYS00YzlhLWJjZDQtNWFmYzlmZDBkN2E3IiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
+								target="_blank">
+								Critical Metrics Dashboard - II </a></h2>
+					</header>
+					<a class="image fit"><img src="images/Nexus_DV.png" alt="" /></a>
+					<p> This dashboard was created to track & analyze the critical KPI's for the Mexico based client.
+						Implemented UI/UX best practices to refine dashboard aesthetics, improving
+						usability, responsiveness, and overall look and feel for enhanced user
+						satisfaction.
+					</p>
+				</article>
+
+				<article class="show" data-category="powerbi">
+					<header>
+						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiNGJlMjVmOGItOWNmYy00ZmUxLThjNGMtYTMyMzkwOWMxY2RhIiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
+								target="_blank">
+								Call Volume Forecasting Dashboard </a></h2>
+					</header>
+					<a class="image fit"><img src="images/Express_Distribution_Model_Dashboard.png" alt="" /></a>
+					<p> This Power BI dashboard, developed for a Qatar-based client, analyzes historical call volume
+						trends to accurately forecast future call distribution. It demonstrates my ability to deliver
+						data-driven insights and automated solutions for business operations.
+					</p>
+				</article>
+
+				<article class="show" data-category="powerbi">
+					<header>
+						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiYjY0M2YzOTUtMjBmMy00MjE5LWFiNTAtODY4MzQ5MjRlYTA4IiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
+								target="_blank">
+								Work Order Analysis Dashboard</a></h2>
+					</header>
+					<a class="image fit"><img src="images/WOW_OLD_WO.png" alt="" /></a>
+					<p> Developed a Power BI dashboard for an Australia-based retail supply chain client to analyze
+						store complaints. Imported the data into the dashboard by connecting it to the SQL database.</p>
+				</article>
+
+				<article class="show" data-category="powerbi">
+					<header>
+						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiODVhZmI0NjUtZDg1Yy00Nzg3LTg5ZmMtZjlkZGY3ZTgzYTllIiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
+								target="_blank">
+								Interactive Sales Analytics Dashboard</a></h2>
+					</header>
+					<a class="image fit"><img src="images/Sales_Analysis_Dashboard.png" alt="" /></a>
+					<p> Developed during my Power BI learning journey, this project analyzes historical sales data to
+						provide comprehensive insights. This dashboard demonstrates my ability to create
+						dynamic and user-friendly Power BI solutions for business intelligence </p>
+				</article>
 
 				<article data-category="excel">
 					<header>
-						<h2><a href="https://github.com/Sid-TheAnalyst/Analysis-Of-IPL-Dataset" target="_blank">
+						<h2><a href="https://1drv.ms/x/c/4b56d904a8c8b4fb/EQ0tlvXj8yhInbPyNtpiT0IBDOr7k1Gst89cffY9UXwZvQ?e=cZDcMy"
+								target="_blank">
+								eCommerce Store Sales Analysis Dashboard</a></h2>
+					</header>
+					<a class="image fit"><img src="images/eCommerce_Store_Sales_Dashboard.png" alt="" /></a>
+					<p>Imaginary eCommerece store name "Vrinda" is selling their products online through diffrent
+						channels like Amazon, Flipkart
+						etc. They have a sales data of year 2022 & they want us to analyse this data to understand their
+						customers to grow more sales in 2023.
+					</p>
+				</article>
+
+				<article data-category="excel">
+					<header>
+						<h2><a href="https://1drv.ms/x/c/4b56d904a8c8b4fb/EVDRfzPenidLoct0ilL6vcQBffb3CnjDqM4NY9yMnKogSA?e=N2h0fv"
+								target="_blank">
 								Analysis Of IPL Dataset Using Excel</a></h2>
 					</header>
 					<a class="image fit"><img src="images/iplanalysis.png" alt="" /></a>
@@ -182,7 +218,7 @@
 
 				<article data-category="python">
 					<header>
-						<h2><a href="https://github.com/Sid-TheAnalyst/WebScraping-YouTube-Data-For-Exploratory-Data-Analysis/blob/main/WebSraping%20YouTube's%20Data%20For%20Analysis/WebScraping%20YouTube's%20Data%20For%20Exploratory%20Data%20Analysis.pdf"
+						<h2><a href="https://github.com/Sid-TheAnalyst/WebScraping-YouTube-Data-For-Exploratory-Data-Analysis/blob/main/WebSraping%20YouTube's%20Data%20For%20Exploratory%20Data%20Analysis/WebScraping%20YouTube's%20Data%20For%20Exploratory%20Data%20Analysis.pdf"
 								target="_blank">
 								Websraping YouTube Data Using Python </a></h2>
 					</header>
@@ -215,46 +251,12 @@
 					</p>
 				</article>
 			</section>
-
-			<footer>
-				<div class="pagination">
-					<a href="generic.html" class="next">More Projects</a>
-
-				</div>
-			</footer>
-			<h1>CONTACT DETAILS</h1>
 		</div>
 
-		<footer id="footer">
-			<section class="split contact">
-				<section class="alt">
-					<h3>Address</h3>
-					<p>NaviMumbai, Maharashtra, India - 400701</p>
-				</section>
-				<section>
-					<h3>Phone</h3>
-					<p><a href="#">(+91) 9833223171</a></p>
-				</section>
-				<section>
-					<h3>Email</h3>
-					<p><a href="#">siddharth24005@gmail.com</a></p>
-				</section>
-				<section>
-					<h3>Social</h3>
-					<ul class="icons alt">
-						<li><a href="https://www.linkedin.com/in/siddharth-alka-kamble-0859501b7"
-								class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a>
-						</li>
-						<li><a href="https://github.com/Sid-TheAnalyst" class="icon brands alt fa-github"><span
-									class="label">GitHub</span></a></li>
-					</ul>
-				</section>
-			</section>
-		</footer>
 
 		<div id="copyright">
 			<ul>
-				<li>&copy; Sid_The-Analyst 2025</li>
+				<li>&copy; Sid_The-Analyst 2023</li>
 			</ul>
 		</div>
 

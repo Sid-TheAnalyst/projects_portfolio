@@ -9,68 +9,6 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
-	<style>
-		/* Add some basic styling for the tabs and hidden projects */
-		.filter-buttons {
-			text-align: center;
-			/* Original margin-bottom: 2em; */
-			margin-bottom: 2em;
-			/* Keep this as it affects space below buttons */
-
-			/* --- NEW: Reduce the margin-top here --- */
-			margin-top: 0em;
-			/* Reduced from default/larger to closer to the text */
-			/* You can try 0.5em or even 0 if you want them very close */
-		}
-
-		/* --- NEW: Target the featured article if it has excessive bottom margin --- */
-		/* Assuming 'post featured' is the article holding your intro text on the projects page */
-		article.post.featured {
-			margin-bottom: 0em;
-			/* Reduce default bottom margin. Adjust as needed. */
-			/* If this is the 'About Me' article, this change will affect that too.
-               If you want this only for the "Projects" section's intro, you'd need
-               to give that specific article a unique class/ID. */
-			padding-bottom: 0em;
-			/* Sometimes padding can contribute, remove if present */
-		}
-
-		/* If you still had <h1>My Projects</h1> or a similar heading,
-           you might need to adjust its margin as well: */
-		/* h1 { margin-bottom: 0.5em; } */
-		/* or similar adjustment */
-
-
-		.filter-button {
-			background-color: #f0f0f0;
-			border: 1px solid #ddd;
-			padding: 0px 40px;
-			margin: 10px;
-			cursor: pointer;
-			font-weight: bold;
-			border-radius: 5px;
-			transition: background-color 0.3s ease, color 0.3s ease;
-		}
-
-		.filter-button:hover,
-		.filter-button.active {
-			background-color: #007bff;
-			/* A nice blue for active/hover */
-			color: #fff;
-		}
-
-		/* Initially hide all projects except 'all' category (handled by JS later) */
-		.posts article {
-			display: none;
-			/* Hide all project articles by default */
-		}
-
-		.posts article.show {
-			display: block;
-			/* Show articles with 'show' class */
-		}
-	</style>
-</head>
 
 <body class="is-preload">
 
@@ -88,12 +26,12 @@
 
 		<nav id="nav">
 			<ul class="links">
-				<li class="active"><a href="index.html">About Me</a></li>
+				<li class="active"><a href="index.html">About me</a></li>
 				<li><a href="generic.html">My Projects</a></li>
 				<li><a href="elements.html">My Certifications</a></li>
 			</ul>
 			<ul class="icons">
-				<li><a href="https://www.linkedin.com/in/siddharth-prajapati-0859501b7/"
+				<li><a href="https://www.linkedin.com/in/siddharth-alka-kamble-0859501b7"
 						class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 				<li><a href="https://github.com/Sid-TheAnalyst" class="icon brands fa-github"><span
 							class="label">GitHub</span></a></li>
@@ -115,113 +53,9 @@
 						Take a look at my work and let's
 						connect!</p>
 				</header>
+				<a class="image fit"><img src="images/Siddharth Kamble Resume_For_Portfolio.png" alt="" /></a>
 			</article>
 
-			<div class="filter-buttons">
-				<button class="filter-button active" data-filter="all">All</button>
-				<button class="filter-button" data-filter="powerbi">Power BI</button>
-				<button class="filter-button" data-filter="excel">Excel</button>
-				<button class="filter-button" data-filter="sql">SQL</button>
-				<button class="filter-button" data-filter="python">Python</button>
-				<button class="filter-button" data-filter="r">R</button>
-			</div>
-
-
-			<section class="posts">
-				<article class="show" data-category="powerbi">
-					<header>
-						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiMjBkNzdhNTgtYmJjNy00ZDI2LWIyODAtMjk2YWUyMDY0NjY5IiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
-								target="_blank">
-								Critical Metrics Dashboard</a></h2>
-					</header>
-					<a class="image fit"><img src="images/historicalsales.png" alt="" /></a>
-					<p>Developed a Power BI dashboard
-						for an Australia-based retail
-						supply chain client to analyze
-						store complaints data. Imported the data into the
-						dashboard by connecting it to
-						the Azure SQL database.</p>
-				</article>
-
-				<article class="show" data-category="powerbi">
-					<header>
-						<h2><a href="https://app.powerbi.com/view?r=eyJrIjoiMjRmNDYzMmEtZDBiMi00ZDU4LThmMzctODIzZmY5ZDRmN2E4IiwidCI6IjdjMGMzNmY1LWFmODMtNGMyNC04ODQ0LTk5NjJlMDE2MzcxOSIsImMiOjEwfQ%3D%3D"
-								target="_blank">
-								Critical Metrics Mobile Application </a></h2>
-					</header>
-					<a class="image fit"><img src="images/WOW_CMD_MV.png" alt="" /></a>
-					<p>Developed a Power BI dashboard
-						for an Australia-based retail
-						supply chain client to analyze
-						store complaints data. Imported the data into the
-						dashboard by connecting it to
-						the Azure SQL database.</p>
-				</article>
-
-
-				<article data-category="excel">
-					<header>
-						<h2><a href="https://github.com/Sid-TheAnalyst/Analysis-Of-IPL-Dataset" target="_blank">
-								Analysis Of IPL Dataset Using Excel</a></h2>
-					</header>
-					<a class="image fit"><img src="images/iplanalysis.png" alt="" /></a>
-					<p>Dashboard was built to show the season wise summary of the IPL tournament using Microsoft Excel.
-					</p>
-				</article>
-
-				<article data-category="sql">
-					<header>
-						<h2><a href="https://github.com/Sid-TheAnalyst/Analysis-of-COVID19-Data-Using-SQL/blob/main/COVID19_DATA_Analysis/COVID19%20Analysis%20Using%20SQL.pdf"
-								target="_blank">
-								Analysis Of COVID19 data using SQL</a></h2>
-					</header>
-					<a class="image fit"><img src="images/covid19.jpg" alt="" /></a>
-					<p>The dataset used for this project have the COVID-19 cases recoreded from 24th Feb 2020 to 30th
-						Apr 2021.</p>
-				</article>
-
-				<article data-category="python">
-					<header>
-						<h2><a href="https://github.com/Sid-TheAnalyst/WebScraping-YouTube-Data-For-Exploratory-Data-Analysis/blob/main/WebSraping%20YouTube's%20Data%20For%20Analysis/WebScraping%20YouTube's%20Data%20For%20Exploratory%20Data%20Analysis.pdf"
-								target="_blank">
-								Websraping YouTube Data Using Python </a></h2>
-					</header>
-					<a class="image fit"><img src="images/youtube.jpg" alt="" /></a>
-					<p>I have build an Python Project to Scrape YouTube data using YouTube Data API.
-					</p>
-				</article>
-
-				<article data-category="r">
-					<header>
-						<h2><a href="https://github.com/Sid-TheAnalyst/Cyclistic-Bike-Share-Analysis-Using-R/blob/main/Cyclistic%20Bike%20Share%20Analysis/Google%20Capstone%20Project%20PDF%20File.pdf"
-								target="_blank">
-								Cyclistic Bike Share Analysis Using R </a></h2>
-					</header>
-					<a class="image fit"><img src="images/bikeshare.jpg" alt="" /></a>
-					<p>This is an Capstone Project build using R programming For Google Data Analytics Certification.
-					</p>
-				</article>
-
-				<article data-category="python">
-					<header>
-						<h2><a href="https://github.com/Sid-TheAnalyst/CODESOFT-Intership-Projects/blob/main/Project2_Building_Movie_Rating_Prediction_Model.ipynb"
-								target="_blank">
-								Movie Rating Prediction With Python</a></h2>
-					</header>
-					<a class="image fit"><img src="images/movieprediction.avif" alt="" /></a>
-					<p>Every dataset has a story and this set is pulled from IMDb.com of all the Indian movies on the
-						platform. I have build the predictive machine learning model using Stochastic Gradient Descent
-						(SGD) Regressor which is going to predicts the rating of a movie based on the given parameters.
-					</p>
-				</article>
-			</section>
-
-			<footer>
-				<div class="pagination">
-					<a href="generic.html" class="next">More Projects</a>
-
-				</div>
-			</footer>
 			<h1>CONTACT DETAILS</h1>
 		</div>
 
